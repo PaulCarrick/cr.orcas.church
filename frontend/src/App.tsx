@@ -43,6 +43,7 @@ import TutorialPage from './TutorialPage'
 import ExternalSitesPage from './ExternalSitesPage'
 import DayCardPage from './DayCardPage'
 import PrivacyPage from './PrivacyPage'
+import SmsTermsPage from './SmsTermsPage'
 import MyAccountPage from './MyAccountPage'
 import ConfirmPhoneBox from './ConfirmPhoneBox'
 import DevotionalsTab from './DevotionalsTab'
@@ -66,7 +67,7 @@ import './App.css'
 // What the pages show until the administrator's settings arrive, and if they cannot be had.
 // The pages a visitor who is not logged in may open while "Login required" is on. Not Set up account: then only an
 // administrator sets up accounts (Site users), and the API refuses sign-ups.
-const lockedOutViews: View[] = ['login', 'forgot', 'reset', 'verify', 'unsubscribe', 'privacy']
+const lockedOutViews: View[] = ['login', 'forgot', 'reset', 'verify', 'unsubscribe', 'privacy', 'smsTerms']
 
 const defaultSiteSettings: SiteSettings = {
   title: 'Bible and Beyond',
@@ -468,6 +469,7 @@ function App() {
         { view: 'tutorial' as View, label: 'Tutorial video' },
         { view: 'contact' as View, label: 'Contact' },
         { view: 'privacy' as View, label: 'Privacy' },
+        { view: 'smsTerms' as View, label: 'Text message terms' },
       ],
     },
   ]
@@ -516,6 +518,7 @@ function App() {
                 {lockedOutView === 'unsubscribe' && emailLink && <UnsubscribePage token={emailLink.token} />}
                 {lockedOutView === 'verify' && emailLink && <VerifyEmailPage token={emailLink.token} onVerified={handleVerified} />}
                 {lockedOutView === 'privacy' && <PrivacyPage onNavigate={navigate} />}
+                {lockedOutView === 'smsTerms' && <SmsTermsPage onNavigate={navigate} siteTitle={siteSettings.title} />}
                 {(lockedOutView === 'login' || lockedOutView === 'forgot' || lockedOutView === 'reset') && (
                   <AccountPage
                     key={lockedOutView}
@@ -618,6 +621,7 @@ function App() {
               {activeView === 'tutorial' && <TutorialPage onNavigate={navigate} />}
               {activeView === 'externalSites' && <ExternalSitesPage sites={externalSites} />}
               {activeView === 'privacy' && <PrivacyPage onNavigate={navigate} />}
+              {activeView === 'smsTerms' && <SmsTermsPage onNavigate={navigate} siteTitle={siteSettings.title} />}
               {(activeView === 'verseOfTheDay' || activeView === 'devotionalOfTheDay') && (
                 <DayCardPage
                   key={activeView}
