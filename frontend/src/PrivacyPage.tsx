@@ -10,8 +10,10 @@ interface PrivacyPageProps {
 const outsideServices: { service: string; whatIsSent: ReactNode; when: string }[] = [
   {
     service: 'Google Gemini (AI)',
-    whatIsSent: 'The words of the question or search only: never your name or email address',
-    when: 'When you open an FAQ answer, ask your own question, or use an AI search',
+    whatIsSent:
+      'The words of the question or search, or of a post or reply being checked: never your name or email address',
+    when:
+      'When you open an FAQ answer, ask your own question or use an AI search, and, when the site checks posts, when you post or reply in Conversations or on the Prayer Wall',
   },
   {
     service: 'Google reCAPTCHA',
@@ -51,7 +53,7 @@ function PrivacyPage({ onNavigate }: PrivacyPageProps) {
   return (
     <div className="welcome privacy-page">
       <h1>Privacy and security</h1>
-      <p className="privacy-updated">Last updated: November 16, 2026</p>
+      <p className="privacy-updated">Last updated: November 22, 2026</p>
       <p>
         Bible and Beyond is a non-commercial website. This page explains what we collect, who can see it, and what
         we send to other services.
@@ -164,7 +166,9 @@ function PrivacyPage({ onNavigate }: PrivacyPageProps) {
       <p>
         <strong>About AI queries:</strong> we never put your name or email address in an AI request, and we do not
         log what you typed. We keep a copy of AI answers so we do not have to ask again, but the search itself is
-        stored only as a scrambled code, not as words. Please do not type personal details into a question.
+        stored only as a scrambled code, not as words. Please do not type personal details into a question. When
+        the site checks posts, each new or changed post or reply (but never a private prayer request) is sent to
+        Gemini only to be checked for profanity, political messages and ads; we keep nothing of that check.
       </p>
 
       <h2>Security</h2>
