@@ -53,7 +53,7 @@ function PrivacyPage({ onNavigate }: PrivacyPageProps) {
   return (
     <div className="welcome privacy-page">
       <h1>Privacy and security</h1>
-      <p className="privacy-updated">Last updated: November 22, 2026</p>
+      <p className="privacy-updated">Last updated: November 23, 2026</p>
       <p>
         Bible and Beyond is a non-commercial website. This page explains what we collect, who can see it, and what
         we send to other services.
@@ -82,6 +82,11 @@ function PrivacyPage({ onNavigate }: PrivacyPageProps) {
           <strong>Your first name, last name and phone number,</strong> if you choose to give them. All three are
           optional. We keep whether you want your messages by email, by text or both, and as pictures; if you ask for
           text messages, we also keep when you agreed to them and whether you replied STOP.
+        </li>
+        <li>
+          <strong>Your picture,</strong> if you add one on Account settings: a small square copy of the photo (any
+          location or camera details in the file are dropped). It is shown only to you, in the account icon; it is
+          deleted when you remove it or when your account is deleted.
         </li>
         <li>
           <strong>Picture messages,</strong> if you ask for them: each picture (a verse or a devotional&rsquo;s opening
