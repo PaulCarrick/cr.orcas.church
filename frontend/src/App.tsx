@@ -639,6 +639,7 @@ function App() {
                 <DayCardPage
                   key={activeView}
                   kind={activeView === 'verseOfTheDay' ? 'verse' : 'devotional'}
+                  translations={translations}
                   onOpenVerse={openVerse}
                   onOpenReading={(devotional, section, unit) => {
                     setDestination({ id: Date.now(), kind: 'devotional', devotional, section, unit })
