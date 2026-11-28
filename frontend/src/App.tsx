@@ -635,7 +635,7 @@ function App() {
                   onNavigate={navigate}
                 />
               )}
-              {activeView === 'help' && <HelpPage translations={translations} onNavigate={navigate} hasMusic={songs.length > 0} hasMaps={maps.length > 0} />}
+              {activeView === 'help' && <HelpPage translations={translations} onNavigate={navigate} hasMusic={songs.length > 0} hasMaps={maps.length > 0} hasCommentaries={commentaries.length > 0} loginRequired={siteSettings.login_required === true} hasApostlesCreed={otherBooks.some((book) => book.id === 'apostles-creed')} siteTitle={siteSettings.title} />}
               {activeView === 'tutorial' && <TutorialPage onNavigate={navigate} />}
               {activeView === 'externalSites' && <ExternalSitesPage sites={externalSites} />}
               {activeView === 'privacy' && <PrivacyPage onNavigate={navigate} />}
